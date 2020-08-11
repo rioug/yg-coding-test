@@ -20,6 +20,8 @@ RSpec.describe "products/new", type: :view do
       assert_select "input[name=?]", "product[description]"
 
       assert_select "input[name=?]", "product[price]"
+
+      assert_select "select[name=?]", "product[retailer_id]"
     end
   end
 end
