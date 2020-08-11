@@ -16,11 +16,15 @@ RSpec.describe "/retailers", type: :request do
   # Retailer. As you add validations to Retailer, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {
+      name: 'Shop',
+    }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {
+      name: '',
+    }
   }
 
   describe "GET /index" do
@@ -85,14 +89,16 @@ RSpec.describe "/retailers", type: :request do
   describe "PATCH /update" do
     context "with valid parameters" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {
+          name: 'Updated'
+        }
       }
 
       it "updates the requested retailer" do
         retailer = Retailer.create! valid_attributes
         patch retailer_url(retailer), params: { retailer: new_attributes }
         retailer.reload
-        skip("Add assertions for updated state")
+        expect(retailer.name).to eq('Updated')
       end
 
       it "redirects to the retailer" do

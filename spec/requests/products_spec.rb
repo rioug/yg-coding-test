@@ -13,14 +13,26 @@
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
 RSpec.describe "/products", type: :request do
+  let(:retailer) { Retailer.create!(name: 'Shop') }
+
   # Product. As you add validations to Product, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {
+      name: 'Milk',
+      description: 'Optional',
+      price: '1.23',
+      retailer_id: retailer.id,
+    }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {
+      name: '',
+      description: 'Optional',
+      price: '0.00',
+      retailer_id: nil,
+    }
   }
 
   describe "GET /index" do
@@ -83,16 +95,26 @@ RSpec.describe "/products", type: :request do
   end
 
   describe "PATCH /update" do
+    let(:other_retailer) { Retailer.create!(name: 'Supermarket') }
+
     context "with valid parameters" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {
+          name: 'Updated',
+          description: 'Example',
+          price: '10.00',
+          retailer_id: other_retailer.id,
+        }
       }
 
       it "updates the requested product" do
         product = Product.create! valid_attributes
         patch product_url(product), params: { product: new_attributes }
         product.reload
-        skip("Add assertions for updated state")
+        expect(product.name).to eq('Updated')
+        expect(product.description).to eq('Example')
+        expect(product.price).to eq('10.00'.to_d)
+        expect(product.retailer).to eq(other_retailer)
       end
 
       it "redirects to the product" do
