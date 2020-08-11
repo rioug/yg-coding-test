@@ -1,0 +1,17 @@
+<div class="product-card">
+
+  <p>
+    <b><%= product.name %></b>
+  </p>
+
+  <% if product.description.present? %>
+    <p>
+      <%= product.description %>
+    </p>
+  <% end %>
+
+  <p>
+    <%= product.display_price %>
+  </p>
+
+</div>

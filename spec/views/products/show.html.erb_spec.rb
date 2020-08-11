@@ -14,6 +14,6 @@ RSpec.describe "products/show", type: :view do
     render
     expect(rendered).to match(/Name/)
     expect(rendered).to match(/Description/)
-    expect(rendered).to match(/Price/)
+    expect(rendered).to match(/\$1.23/)
   end
 end

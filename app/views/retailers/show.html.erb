@@ -1,9 +1,14 @@
 <p id="notice"><%= notice %></p>
 
+<h1><%= @retailer.name %></h1>
+
 <p>
-  <strong>Name:</strong>
-  <%= @retailer.name %>
+  <%= link_to 'Edit', edit_retailer_path(@retailer) %> |
+  <%= link_to 'Back', retailers_path %>
 </p>
 
-<%= link_to 'Edit', edit_retailer_path(@retailer) %> |
-<%= link_to 'Back', retailers_path %>
+<h2>Products</h2>
+
+<% @retailer.products.each do |product| %>
+  <%= render 'products/card', product: product %>
+<% end %>
