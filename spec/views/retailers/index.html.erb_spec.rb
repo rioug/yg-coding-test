@@ -14,6 +14,6 @@ RSpec.describe "retailers/index", type: :view do
 
   it "renders a list of retailers" do
     render
-    assert_select "tr>td", text: "Name".to_s, count: 2
+    assert_select ".retailer-card h2", text: "Name".to_s, count: 2
   end
 end

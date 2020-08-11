@@ -14,4 +14,9 @@
     <%= product.display_price %>
   </p>
 
+  <p>
+    <%= link_to 'Edit', edit_product_path(product) %> |
+    <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </p>
+
 </div>
