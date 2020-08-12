@@ -4,7 +4,7 @@ Thank you for taking the time to do this coding test.
 
 ## Coding test
 
-This is a Ruby on Rails app that simulates a rudimentary ecommerce website.
+This is a Ruby on Rails app that simulates a basic ecommerce website.
 
 - There are two database models: `Product` and `Retailer`.
 
@@ -16,7 +16,9 @@ This is a Ruby on Rails app that simulates a rudimentary ecommerce website.
 
 ### Task
 
-Your task is to develop a basic shopping cart for this app. Please complete the following user stories:
+Your task is to develop the initial stage of a __shopping cart__ feature.
+
+Please complete the following user stories:
 
 - As a user, I can add a product to the cart.
 
@@ -26,17 +28,21 @@ Your task is to develop a basic shopping cart for this app. Please complete the 
 
 ### Guidelines
 
+- Focus on the functionality. (The UI design isn't important, but it must _work_.)
+
 - Write tests.
 
 - Write clear commit messages.
 
 - You do _not_ need to implement other features such as payment or user authentication.
 
-### Submission
+### Instructions
 
-Please send us one of the following:
+Clone this repo to get started. Get the app running in your browser (see the instructions later in this document). Explore the basic functionality of the app, and think about the requested feature changes.
 
-- a link to your Git repo (e.g. on GitHub), or
+Commit your changes to the code. When finished, please send us one of the following:
+
+- a link to your copy of the Git repo (e.g. on GitHub), or
 - a .zip file which includes the Git history.
 
 ---
