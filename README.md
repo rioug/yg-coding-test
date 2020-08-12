@@ -40,7 +40,7 @@ Please complete the following user stories:
 
 Clone this repo to get started. Get the app running in your browser (see the instructions later in this document). Explore the basic functionality of the app, and think about the requested feature changes.
 
-Commit your changes to the code. When finished, please send us one of the following:
+Commit your changes to the code. When finished, please email us with one of the following:
 
 - a link to your copy of the Git repo (e.g. on GitHub), or
 - a .zip file which includes the Git history.
