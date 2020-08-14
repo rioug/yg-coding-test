@@ -42,3 +42,5 @@ Product.create([
     retailer: supermarket_retailer,
   },
 ])
+
+ShoppingCart.create(name: 'Guest cart')
