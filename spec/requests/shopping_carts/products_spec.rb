@@ -42,6 +42,24 @@ RSpec.describe "/shopping_carts/products", type: :request do
     end
   end
 
-  #describe "DELETE /destroy" do
-  #end
+  describe "DELETE /destroy" do
+    let(:cart) { ShoppingCart.create!(name: 'cart') }
+
+    before(:each) do
+      shopping_cart_product = ShoppingCarts::Product.create!(
+        shopping_cart_id: cart.id, product_id: product.id, quantity: 1
+      )
+    end
+
+    it "delete a ShoppingCarts::Product" do
+      expect {
+        delete shopping_cart_product_url(cart.id, product)
+      }.to change(ShoppingCarts::Product, :count).by(-1)
+    end
+
+    it "redirects to the ShoppingCart" do
+      delete shopping_cart_product_url(cart.id, product)
+      expect(response).to redirect_to(shopping_cart_url(cart.id))
+    end
+  end
 end

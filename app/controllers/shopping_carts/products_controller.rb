@@ -33,8 +33,13 @@ class ShoppingCarts::ProductsController < ApplicationController
 
   ## DELETE /shopping_carts/products/1
   ## DELETE /shopping_carts/products/1.json
-  #def destroy
-  #end
+  def destroy
+    @shopping_carts_product.destroy
+    respond_to do |format|
+      format.html { redirect_to shopping_cart_url(params[:shopping_cart_id]), notice: 'Product was successfully removed.' }
+      format.json { head :no_content }
+    end
+  end
 
   private
     def render_success
