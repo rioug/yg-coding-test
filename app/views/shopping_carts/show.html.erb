@@ -1,3 +1,30 @@
+<p id="notice"><%= notice %></p>
+<p id="alert"><%= alert %></p>
+
 <h2><%= @cart.name %></h2>
 
-<p>The cart is empty</p>
+<% if @cart.products.empty? %>
+  <p>The cart is empty</p>
+<% else %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th ></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @cart.products.each do |product| %>
+        <tr>
+          <td><%= product.product.name %></td>
+          <td><%= product.quantity %></td>
+          <td><%= product.price %></td>
+          <td><%= link_to 'Remove', '' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

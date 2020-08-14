@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :shopping_carts, only: [:show]
+  resources :shopping_carts, only: [:show] do
+    resources :products, controller: 'shopping_carts/products', only: [:update, :destroy]
+  end
   resources :products
   root to: 'root#index'
 

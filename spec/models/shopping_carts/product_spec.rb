@@ -26,4 +26,14 @@ RSpec.describe ShoppingCarts::Product, type: :model do
       expect(subject).not_to be_valid
     end
   end
+
+  describe '#price' do
+    it 'should calculate product price based on quantity' do
+      quantity = 3
+      subject.quantity = quantity
+
+      expected_price = quantity * product.price
+      expect(subject.price).to eq('$5.97')
+    end
+  end
 end
