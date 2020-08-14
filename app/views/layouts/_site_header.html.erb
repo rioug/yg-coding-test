@@ -4,6 +4,7 @@
     <ul>
       <li><%= link_to 'Home', root_path %></li>
       <li><%= link_to 'All Products', products_path %></li>
+      <li><%= link_to 'Cart', shopping_cart_path(Rails.configuration.default_cart_id) %></li>
     </ul>
   </nav>
 </header>
