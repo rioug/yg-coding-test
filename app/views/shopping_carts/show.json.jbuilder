@@ -8,3 +8,5 @@ json.shopping_cart_products do
     json.price product.price
   end
 end
+
+json.total_price @cart.total_price
