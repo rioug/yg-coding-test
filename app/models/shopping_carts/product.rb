@@ -4,7 +4,11 @@ class ShoppingCarts::Product < ApplicationRecord
 
   validates :quantity, presence: true, numericality: { greater_than: 0 }
 
+  def display_price
+    "$#{'%.2f' % price}"
+  end
+
   def price
-    "$#{'%.2f' % (product.price * quantity)}"
+    product.price * quantity
   end
 end

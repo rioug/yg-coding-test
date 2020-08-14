@@ -12,7 +12,7 @@
         <th>Name</th>
         <th>Quantity</th>
         <th>Price</th>
-        <th ></th>
+        <th></th>
       </tr>
     </thead>
 
@@ -21,10 +21,14 @@
         <tr>
           <td><%= product.product.name %></td>
           <td><%= product.quantity %></td>
-          <td><%= product.price %></td>
+          <td><%= product.display_price %></td>
           <td><%= link_to 'Remove', shopping_cart_product_url(@cart.id, product.product), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
+      <tr>
+        <td>Total:</td>
+        <td><%= @cart.total_price %></td>
+      </tr>
     </tbody>
   </table>
 <% end %>

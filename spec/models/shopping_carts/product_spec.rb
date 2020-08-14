@@ -33,7 +33,17 @@ RSpec.describe ShoppingCarts::Product, type: :model do
       subject.quantity = quantity
 
       expected_price = quantity * product.price
-      expect(subject.price).to eq('$5.97')
+      expect(subject.price).to eq(expected_price)
+    end
+  end
+
+  describe '#display_price' do
+    it 'should format the price to display in dollars' do
+      quantity = 3
+      subject.quantity = quantity
+
+      expected_price = quantity * product.price
+      expect(subject.display_price).to eq("$#{expected_price}")
     end
   end
 end
